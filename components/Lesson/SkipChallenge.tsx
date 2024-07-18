@@ -8,8 +8,7 @@ export default function LessonChallenge({ progressService }) {
     const value = target.type === "checkbox" ? target.checked : target.value
 
     progressSend({
-      type: "DISABLE_CHALLENGES",
-      value,
+      type: "DISABLE_CHALLENGES"
     })
   }
 

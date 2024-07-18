@@ -49,10 +49,7 @@ export default function LessonChallenge({
                         onClick={() => {
                           setAnswerChecked((prev) => [...prev, index])
                           progressSend({
-                            type: "SUBMIT_ANSWER",
-                            id: lessonPath,
-                            challengeIndex: 0,
-                            userAnswerIndex: index,
+                            type: "SUBMIT_ANSWER"
                           })
                         }}
                       />
