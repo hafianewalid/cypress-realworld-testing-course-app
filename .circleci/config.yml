@@ -6,7 +6,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/node:18.17.0  # Specify Node.js version 18.17.0
+      - image: circleci/node:latest
     steps:
       - checkout
       - run:
