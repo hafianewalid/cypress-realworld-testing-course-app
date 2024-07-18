@@ -1,12 +1,26 @@
 version: 2.1
+
 orbs:
   cypress: cypress-io/cypress@3
 
-  
+jobs:
+  build:
+    docker:
+      - image: circleci/node:18.17.0  # Specify Node.js version 18.17.0
+    steps:
+      - checkout
+      - run:
+          name: Install Dependencies
+          command: npm install
+      - run:
+          name: Build Next.js Application
+          command: npx next build
+      - run:
+          name: Run Cypress Tests
+          command: npx cypress run --browser chrome
+
 workflows:
+  version: 2
   test:
     jobs:
-      - cypress/run:
-          install-browsers: true
-          start-command: 'npm run start'
-          cypress-command: 'npx cypress run --browser chrome'
+      - build
