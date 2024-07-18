@@ -19,6 +19,7 @@ jobs:
           name: Run Cypress Tests
           command: npx cypress run --browser chrome
 
+
 workflows:
   version: 2
   test:
