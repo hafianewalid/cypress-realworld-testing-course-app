@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 const navigation = {
   main: [
     { name: "Next.js", href: "https://nextjs.org/" },
@@ -58,12 +60,12 @@ export default function Footer() {
           >
             {navigation.main.map((item) => (
               <div key={item.name} className="px-5 py-2">
-                <a
+                <Link
                   href={item.href}
                   className="text-base text-gray-500 hover:text-gray-900"
                 >
                   {item.name}
-                </a>
+                </Link>
               </div>
             ))}
           </nav>

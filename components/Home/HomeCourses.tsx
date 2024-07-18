@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic"
+import Link from "next/link"
 
 const HomeProgress = dynamic(() => import("./HomeProgress"), {})
 
@@ -31,12 +32,12 @@ export default function HomeCourses({ courses, content, progressService }) {
                         progressService={progressService}
                       />
                       <div className="mt-6">
-                        <a
+                        <Link
                           href={`/${content[course].slug}`}
                           className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-500 hover:bg-blue-600"
                         >
                           Get started
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -75,12 +76,12 @@ export default function HomeCourses({ courses, content, progressService }) {
                         progressService={progressService}
                       />
                       <div className="mt-6">
-                        <a
+                        <Link
                           href={`/${content[course].slug}`}
                           className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-500 hover:bg-blue-600"
                         >
                           Get started
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>

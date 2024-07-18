@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { LessonTableOfContents } from "../../types/common"
 
 function classNames(...classes) {
@@ -12,7 +13,7 @@ export default function LessonSideNav({ navigation }: Props) {
   return (
     <nav data-test="toc-sidebar" className="space-y-1" aria-label="Sidebar">
       {navigation.map((item) => (
-        <a
+        <Link
           data-test={item.slug}
           key={item.slug}
           href={`#${item.slug}`}
@@ -25,7 +26,7 @@ export default function LessonSideNav({ navigation }: Props) {
           aria-current={item.current ? "page" : undefined}
         >
           <span className="truncate">{item.content}</span>
-        </a>
+        </Link>
       ))}
     </nav>
   )

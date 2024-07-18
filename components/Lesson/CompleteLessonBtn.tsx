@@ -1,4 +1,5 @@
 import { useActor } from "@xstate/react"
+import Link from "next/link"
 
 export default function NextLessonBtn({
   nextLessonPath,
@@ -9,7 +10,7 @@ export default function NextLessonBtn({
 
   return (
     <div data-test="complete-lesson-button" className="py-20">
-      <a
+      <Link
         href={nextLessonPath ? nextLessonPath : "/"}
         className="mx-auto max-w-xl flex items-center justify-center px-8 py-3 text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10"
         onClick={() => {
@@ -20,7 +21,7 @@ export default function NextLessonBtn({
         }}
       >
         {nextLessonPath ? "Next Lesson" : "Complete Course"}
-      </a>
+      </Link>
     </div>
   )
 }

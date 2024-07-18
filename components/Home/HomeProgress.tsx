@@ -55,10 +55,8 @@ export default function HomeProgress({ course, content, progressService }) {
               {/* Lesson Title */}
               <span className="ml-4 min-w-0 flex flex-col">
                 <span className="text-xs font-semibold tracking-wide uppercase">
-                  <Link href={`/${course}/${lesson.slug}`}>
-                    <a data-test={`lesson-progress-link-${index}`}>
+                  <Link href={`/${course}/${lesson.slug}`} data-test={`lesson-progress-link-${index}`}>
                       {lesson.title}
-                    </a>
                   </Link>
                 </span>
               </span>
