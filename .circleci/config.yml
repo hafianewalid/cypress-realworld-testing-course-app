@@ -1,24 +1,25 @@
 version: 2.1
 
-orbs:
-  cypress: cypress-io/cypress@3
-
 jobs:
   build:
     docker:
       - image: circleci/node:latest
     steps:
+      - run:
+          name: Install Node.js 18.17.0 with NVM
+          command: |
+            nvm install 18.17.0
+            nvm use 18.17.0
       - checkout
       - run:
           name: Install Dependencies
-          command: npm install --legacy-peer-deps
+          command: npm install
       - run:
           name: Build Next.js Application
           command: npx next build
       - run:
           name: Run Cypress Tests
           command: npx cypress run --browser chrome
-
 
 workflows:
   version: 2
