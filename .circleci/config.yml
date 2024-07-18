@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run:
           name: Install Dependencies
-          command: npm install
+          command: npm install --legacy-peer-deps
       - run:
           name: Build Next.js Application
           command: npx next build
